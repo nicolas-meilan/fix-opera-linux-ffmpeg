@@ -5,9 +5,9 @@
 
 ## Index
 
-* [Requirements](##Requirements)
-* [How use](##How-use)
-* [Create an alias](##Create-an-alias)
+* [Requirements](#Requirements)
+* [How use](#How-use)
+* [Create an alias](#Create-an-alias)
 
 ### Requirements
 
