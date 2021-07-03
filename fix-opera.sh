@@ -13,7 +13,7 @@ readonly ZIP_FILE='.zip'
 readonly TEMP_FILE="$TEMP_FOLDER$FILE_NAME"
 readonly OPERA_FILE="$OPERA_FOLDER$FILE_NAME"
 
-readonly GIT_API=https://api.github.com/repos/iteufel/nwjs-ffmpeg-prebuilt/releases/latest
+readonly GIT_API=https://api.github.com/repos/iteufel/nwjs-ffmpeg-prebuilt/releases/21966820
 
 printf '\nGetting Url ...\n'
 
