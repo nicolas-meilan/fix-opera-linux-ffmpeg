@@ -13,11 +13,11 @@ readonly ZIP_FILE='.zip'
 readonly TEMP_FILE="$TEMP_FOLDER$FILE_NAME"
 readonly OPERA_FILE="$OPERA_FOLDER$FILE_NAME"
 
-readonly GIT_API=https://api.github.com/repos/iteufel/nwjs-ffmpeg-prebuilt/releases/21966820
+readonly GIT_API=https://api.github.com/repos/iteufel/nwjs-ffmpeg-prebuilt/releases
 
 printf '\nGetting Url ...\n'
 
-readonly OPERA_FFMPEG_URL=$(curl -s $GIT_API | grep browser_download_url | cut -d '"' -f 4 | grep linux-x64)
+readonly OPERA_FFMPEG_URL=$(curl -s $GIT_API | grep browser_download_url | cut -d '"' -f 4 | grep linux-x64 | head -n 1)
 
 printf '\nDownloading ffmpeg ...\n'
 
