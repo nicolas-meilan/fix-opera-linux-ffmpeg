@@ -12,6 +12,7 @@ readonly FILE_NAME='libffmpeg.so'
 readonly ZIP_FILE='.zip'
 readonly TEMP_FILE="$TEMP_FOLDER$FILE_NAME"
 readonly OPERA_FILE="$OPERA_FOLDER$FILE_NAME"
+readonly WIDEVINE_FOLDER='/opt/google/chrome/WidevineCdm'
 
 readonly GIT_API=https://api.github.com/repos/iteufel/nwjs-ffmpeg-prebuilt/releases
 
@@ -34,3 +35,14 @@ mv -f "$TEMP_FILE/$FILE_NAME" $OPERA_FILE
 printf '\nDeleting Temporary files ...\n'
 
 find $TEMP_FOLDER -name "*$FILE_NAME*" -delete
+
+if test -d $WIDEVINE_FOLDER
+        then
+                rm -rf "$OPERA_FOLDER/lib_extra"
+                mkdir "$OPERA_FOLDER/lib_extra"
+                cp -R $WIDEVINE_FOLDER "$OPERA_FOLDER/lib_extra/"
+                printf "[\n      {\n         "preload": "/usr/lib/x86_64-linux-gnu/opera/lib_extra/WidevineCdm"\n      }\n]\n" > "$OPERA_FOLDER/resources/widevine_config.json"
+        else
+                printf "There should be Google Chrome installed to /opt/google/chrome to use its WidevineCdm\n"
+                exit 1
+fi
