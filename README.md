@@ -2,6 +2,7 @@
 
 * Fix Opera html5 media content.
 * It script must be execute all times opera will fails on showing html5 media content.
+* Now it also fixes WidevineCdm support for DRM video. You can try it on Vevo youtube channel for example. (Requires Chrome installation in /opt/google/chrome)
 
 ## Index
 
@@ -21,11 +22,11 @@
 
 1. Clone this repo
 
-    ```git clone https://github.com/nicolas-meilan/fix-opera-linux-ffmpeg.git```
+    ```git clone https://github.com/Ld-Hagen/fix-opera-linux-ffmpeg-widevine.git```
 
 2. Go to the repo root folder
 
-    ```cd ./fix-opera-linux-ffmpeg```
+    ```cd ./fix-opera-linux-ffmpeg-widevine```
 
 3. Give execute permissions to the script file
 
@@ -39,19 +40,19 @@
 
 1. Clone this repo
     
-    ```git clone https://github.com/nicolas-meilan/fix-opera-linux-ffmpeg.git```
+    ```git clone https://github.com/Ld-Hagen/fix-opera-linux-ffmpeg-widevine.git```
 
 2. Create a **script** folder on your **home**
     
-    ```mkdir ~/.script```
+    ```mkdir ~/.scripts```
 
 3. Copy the script into the **script** folder
     
-    ```cp ./fix-opera-linux-ffmpeg/fix-opera.sh ~/.script```
+    ```cp ./fix-opera-linux-ffmpeg-widevine/fix-opera.sh ~/.scripts```
 
 4. Give execute permissions to the script file
     
-    ```chmod +x ~/.script/fix-opera-linux-ffmpeg/fix-opera.sh```
+    ```chmod +x ~/.scripts/fix-opera.sh```
 
 5. Create an **alias** on the **.bashrc** file (Remember replace **<YOUR_USER>** for your linux user)
     
@@ -63,4 +64,4 @@
 
 7. Delete the repo
     
-    ```rm -rf ./fix-opera-linux-ffmpeg```
+    ```rm -rf ./fix-opera-linux-ffmpeg-widevine```
