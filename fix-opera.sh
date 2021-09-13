@@ -42,7 +42,7 @@ if test -d $WIDEVINE_FOLDER
                 rm -rf "$OPERA_FOLDER/lib_extra"
                 mkdir "$OPERA_FOLDER/lib_extra"
                 cp -R $WIDEVINE_FOLDER "$OPERA_FOLDER/lib_extra/"
-                printf "[\n      {\n         "preload": "/usr/lib/x86_64-linux-gnu/opera/lib_extra/WidevineCdm"\n      }\n]\n" > "$OPERA_FOLDER/resources/widevine_config.json"
+                printf "[\n      {\n         \"preload\": \"$OPERA_FOLDER/lib_extra/WidevineCdm\"\n      }\n]\n" > "$OPERA_FOLDER/resources/widevine_config.json"
         else
                 printf "\nThere should be Google Chrome installed to /opt/google/chrome to use its WidevineCdm\n"
 fi
