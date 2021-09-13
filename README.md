@@ -22,11 +22,11 @@
 
 1. Clone this repo
 
-    ```git clone https://github.com/Ld-Hagen/fix-opera-linux-ffmpeg-widevine.git```
+    ```git clone https://github.com/nicolas-meilan/fix-opera-linux-ffmpeg.git```
 
 2. Go to the repo root folder
 
-    ```cd ./fix-opera-linux-ffmpeg-widevine```
+    ```cd ./fix-opera-linux-ffmpeg```
 
 3. Give execute permissions to the script file
 
@@ -40,7 +40,7 @@
 
 1. Clone this repo
     
-    ```git clone https://github.com/Ld-Hagen/fix-opera-linux-ffmpeg-widevine.git```
+    ```git clone https://github.com/nicolas-meilan/fix-opera-linux-ffmpeg.git```
 
 2. Create a **script** folder on your **home**
     
@@ -48,7 +48,7 @@
 
 3. Copy the script into the **script** folder
     
-    ```cp ./fix-opera-linux-ffmpeg-widevine/fix-opera.sh ~/.scripts```
+    ```cp ./fix-opera-linux-ffmpeg/fix-opera.sh ~/.scripts```
 
 4. Give execute permissions to the script file
     
@@ -64,4 +64,4 @@
 
 7. Delete the repo
     
-    ```rm -rf ./fix-opera-linux-ffmpeg-widevine```
+    ```rm -rf ./fix-opera-linux-ffmpeg```
