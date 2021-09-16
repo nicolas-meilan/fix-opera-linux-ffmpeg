@@ -2,7 +2,7 @@
 
 * Fix Opera html5 media content.
 * It script must be execute all times opera will fails on showing html5 media content.
-* Now it also fixes WidevineCdm support for DRM video. You can try it on Vevo youtube channel for example. (Requires Chrome installation in /opt/google/chrome)
+* Now it also fixes WidevineCdm support for DRM video. You can try it on Vevo youtube channel for example.
 
 ## Index
 
