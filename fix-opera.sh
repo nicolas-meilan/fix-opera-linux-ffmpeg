@@ -52,7 +52,7 @@ if $FIX_WIDEVINE
     cp -R "$TEMP_FOLDER/chrome/opt/google/chrome/WidevineCdm" "$OPERA_FOLDER/lib_extra/"
     printf "[\n      {\n         \"preload\": \"$OPERA_FOLDER/lib_extra/WidevineCdm\"\n      }\n]\n" > "$OPERA_FOLDER/resources/widevine_config.json"
 
-    printd "\nDeleting temprorary files ...\n"
+    printf "\nDeleting temprorary files ...\n"
     rm -rf "$TEMP_FOLDER/chrome"
   else
     printf "\nInstalling WidevineCdm skipped\n"
