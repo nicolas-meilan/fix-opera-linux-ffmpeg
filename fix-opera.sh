@@ -12,7 +12,8 @@ readonly FILE_NAME='libffmpeg.so'
 readonly ZIP_FILE='.zip'
 readonly TEMP_FILE="$TEMP_FOLDER$FILE_NAME"
 readonly OPERA_FILE="$OPERA_FOLDER$FILE_NAME"
-readonly WIDEVINE_FOLDER='/opt/google/chrome/WidevineCdm'
+readonly FIX_WIDEVINE=true
+readonly CHROME_DL_LINK="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 
 readonly GIT_API=https://api.github.com/repos/iteufel/nwjs-ffmpeg-prebuilt/releases
 
@@ -36,13 +37,23 @@ printf '\nDeleting Temporary files ...\n'
 
 find $TEMP_FOLDER -name "*$FILE_NAME*" -delete
 
-if test -d $WIDEVINE_FOLDER
-        then
-                printf "\nInstalling WidevineCdm ...\n"
-                rm -rf "$OPERA_FOLDER/lib_extra"
-                mkdir "$OPERA_FOLDER/lib_extra"
-                cp -R $WIDEVINE_FOLDER "$OPERA_FOLDER/lib_extra/"
-                printf "[\n      {\n         \"preload\": \"$OPERA_FOLDER/lib_extra/WidevineCdm\"\n      }\n]\n" > "$OPERA_FOLDER/resources/widevine_config.json"
-        else
-                printf "\nThere should be Google Chrome installed to /opt/google/chrome to use its WidevineCdm\n"
+if $FIX_WIDEVINE
+  then
+    rm -rf "$OPERA_FOLDER/lib_extra"
+    mkdir "$OPERA_FOLDER/lib_extra"
+    printf  "\nDownloading Google Chrome ...\n"
+    wget -P "$TEMP_FOLDER" "$CHROME_DL_LINK"
+
+    printf "\nExtracting Chrome to temporary folder ...\n"
+    CHROME_PKG_NAME=`basename $CHROME_DL_LINK`
+    dpkg -x "$TEMP_FOLDER/$CHROME_PKG_NAME" "$TEMP_FOLDER/chrome"
+
+    printf "\nInstalling WidevineCdm ...\n"
+    cp -R "$TEMP_FOLDER/chrome/opt/google/chrome/WidevineCdm" "$OPERA_FOLDER/lib_extra/"
+    printf "[\n      {\n         \"preload\": \"$OPERA_FOLDER/lib_extra/WidevineCdm\"\n      }\n]\n" > "$OPERA_FOLDER/resources/widevine_config.json"
+
+    printd "\nDeleting temprorary files ...\n"
+    rm -rf "$TEMP_FOLDER/chrome"
+  else
+    printf "\nInstalling WidevineCdm skipped\n"
 fi
