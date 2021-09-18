@@ -22,7 +22,7 @@
 
 1. Clone this repo
 
-    ```git clone https://github.com/Ld-Hagen/fix-opera-linux-ffmpeg-widevine.git```
+    ```git clone https://github.com/nicolas-meilan/fix-opera-linux-ffmpeg```
 
 2. Go to the repo root folder
 
@@ -40,7 +40,7 @@
 
 1. Clone this repo
     
-    ```git clone https://github.com/Ld-Hagen/fix-opera-linux-ffmpeg-widevine.git```
+    ```git clone https://github.com/nicolas-meilan/fix-opera-linux-ffmpeg```
 
 2. Create a **script** folder on your **home**
     
