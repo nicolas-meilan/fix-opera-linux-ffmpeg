@@ -42,11 +42,14 @@ if $FIX_WIDEVINE
     rm -rf "$OPERA_FOLDER/lib_extra"
     mkdir "$OPERA_FOLDER/lib_extra"
     printf  "\nDownloading Google Chrome ...\n"
-    wget -P "$TEMP_FOLDER" "$CHROME_DL_LINK"
+    mkdir "$TEMP_FOLDER/chrome"
+    cd "$TEMP_FOLDER/chrome"
+    wget "$CHROME_DL_LINK"
 
     printf "\nExtracting Chrome to temporary folder ...\n"
     CHROME_PKG_NAME=`basename $CHROME_DL_LINK`
-    dpkg -x "$TEMP_FOLDER/$CHROME_PKG_NAME" "$TEMP_FOLDER/chrome"
+    ar x "$CHROME_PKG_NAME"
+    tar xf data.tar.xz
 
     printf "\nInstalling WidevineCdm ...\n"
     cp -R "$TEMP_FOLDER/chrome/opt/google/chrome/WidevineCdm" "$OPERA_FOLDER/lib_extra/"
