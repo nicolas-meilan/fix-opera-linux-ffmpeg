@@ -9,8 +9,10 @@ fi
 readonly TEMP_FOLDER='/tmp/'
 readonly OPERA_FOLDER='/usr/lib/x86_64-linux-gnu/opera/'
 readonly FILE_NAME='libffmpeg.so'
+readonly BACKUP_FILE_NAME="libffmpeg.so.backup-`date +%m-%d-%y_%H%M%S`"
 readonly ZIP_FILE='.zip'
 readonly TEMP_FILE="$TEMP_FOLDER$FILE_NAME"
+readonly OPERA_BACKUP_FILE="$OPERA_FOLDER$BACKUP_FILE_NAME"
 readonly OPERA_FILE="$OPERA_FOLDER$FILE_NAME"
 readonly WIDEVINE_FOLDER='/opt/google/chrome/WidevineCdm'
 
@@ -27,6 +29,10 @@ wget $OPERA_FFMPEG_URL -O "$TEMP_FILE$ZIP_FILE"
 printf "\nUnzipping ...\n\n"
 
 unzip "$TEMP_FILE$ZIP_FILE" -d $TEMP_FILE
+
+printf "\nBackup file on $OPERA_BACKUP_FILE ...\n"
+
+mv -f "$TEMP_FILE/$FILE_NAME" $OPERA_BACKUP_FILE
 
 printf "\nMoving file on $OPERA_FILE ...\n"
 
