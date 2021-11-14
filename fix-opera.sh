@@ -16,11 +16,11 @@ readonly OPERA_BACKUP_FILE="$OPERA_FOLDER$BACKUP_FILE_NAME"
 readonly OPERA_FILE="$OPERA_FOLDER$FILE_NAME"
 readonly WIDEVINE_FOLDER='/opt/google/chrome/WidevineCdm'
 
-readonly GIT_API=https://api.github.com/repos/iteufel/nwjs-ffmpeg-prebuilt/releases
+readonly FFMPEG_URL=https://api.github.com/repos/Ld-Hagen/fix-opera-linux-ffmpeg-widevine/releases
 
 printf '\nGetting Url ...\n'
 
-readonly OPERA_FFMPEG_URL=$(curl -s $GIT_API | grep browser_download_url | cut -d '"' -f 4 | grep linux-x64 | head -n 1)
+readonly OPERA_FFMPEG_URL=$(wget -qO - $FFMPEG_URL | grep browser_download_url | cut -d '"' -f 4 | grep linux-x64 | head -n 1)
 
 printf '\nDownloading ffmpeg ...\n'
 
