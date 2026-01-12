@@ -46,22 +46,18 @@
     
     ```mkdir ~/.scripts```
 
-3. Copy the script into the **script** folder
+3. Move the script into the **script** folder
     
-    ```cp ./fix-opera-linux-ffmpeg-widevine/fix-opera.sh ~/.scripts```
+    ```mv ./fix-opera-linux-ffmpeg-widevine/fix-opera.sh ~/.scripts/```
 
 4. Give execute permissions to the script file
     
-    ```chmod +x ~/.scripts/fix-opera.sh```
+    ```chmod +x ~/.scripts/fix-opera-linux-ffmpeg/fix-opera.sh```
 
 5. Create an **alias** on the **.bashrc** file (Remember replace **<YOUR_USER>** for your linux user)
     
-    ```echo "alias fix-opera='sudo /home/<YOUR_USER>/.scripts/fix-opera.sh' # Opera fix HTML5 media" >> ~/.bashrc```
+    ```echo "alias fix-opera='sudo /home/<YOUR_USER>/.scripts/fix-opera-linux-ffmpeg/fix-opera.sh' # Opera fix HTML5 media" >> ~/.bashrc```
 
 6. Update **.bashrc** file
     
     ```source ~/.bashrc```
-
-7. Delete the repo
-    
-    ```rm -rf ./fix-opera-linux-ffmpeg-widevine```
